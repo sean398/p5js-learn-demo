@@ -11,8 +11,6 @@ function draw() {
   noLoop();
 }
 
-//1. a quadrangle with random vertices
-//2. deviate
 function approxQuad(deviate) {
   // How will you create your rectangle with a deviation
   // rect(x, y, x2, y2);
