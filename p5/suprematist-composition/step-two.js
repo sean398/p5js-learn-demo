@@ -5,18 +5,22 @@ function setup() {
 
 function draw() {
   background(245);
+  drawRandomQuads();
+  noLoop();
+}
+
+function drawRandomQuads() {
   for (let i = 0; i < 12; i++) {
     if (i < 4) {
-      fill(255, 105, 97); //red
+      fill(108, 148, 196); // blue
     } else if (i >= 4 && i < 8) {
       fill(253, 253, 139); //yellow
     } else {
-      fill(108, 148, 196); // blue
+      fill(255, 105, 97); //red
     }
     const deviate = random(30);
     approxQuad(deviate);
   }
-  noLoop();
 }
 
 // 1. generate quad
@@ -32,12 +36,12 @@ function approxQuad(deviate) {
   quad(
     centerX - width,
     centerY - height,
-    centerX + width + random(deviate),
-    centerY - height + random(deviate),
-    centerX + width + random(deviate),
-    centerY + height + random(deviate),
-    centerX - width + random(deviate),
-    centerY + height + random(deviate)
+    centerX + width + random(-deviate, deviate),
+    centerY - height + random(-deviate, deviate),
+    centerX + width + random(-deviate, deviate),
+    centerY + height + random(-deviate, deviate),
+    centerX - width + random(-deviate, deviate),
+    centerY + height + random(-deviate, deviate)
   );
 }
 
